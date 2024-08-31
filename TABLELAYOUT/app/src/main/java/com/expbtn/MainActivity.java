@@ -97,6 +97,20 @@ public class MainActivity extends AppCompatActivity {
     // inverte todas as seleções dos quadradinhos
     private void inverter() {
         // TODO: IMPLEMENTAR -> Esta é a sua tarefa. Modifique apenas isto.
+
+        for (Map.Entry<Integer, Button> entry : btnMap.entrySet()) {
+            Button btn = entry.getValue();
+            int id = entry.getKey();
+            if (arrayQuads[id]){
+                btn.setBackgroundColor(Color.parseColor(COR_UNSELECT));
+                arrayQuads[id] = false;
+            } else {
+                btn.setBackgroundColor(Color.parseColor(COR_SELECT));
+                arrayQuads[id] = true;
+            }
+
+        }
+
     }
 
     // limpa todos os quadradinhos
